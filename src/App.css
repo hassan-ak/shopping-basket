@@ -364,3 +364,17 @@ body {
 .pc{
     margin-top: 20px;
 }
+
+/* Cart */
+.cartListP{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid white;
+    padding: 10px;
+    color: #298155;
+}  
+.cartListP p{
+    color: white;
+} 
