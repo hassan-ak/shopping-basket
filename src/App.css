@@ -49,3 +49,10 @@ body {
 .title{
     color: #298155;
 }
+
+/* Footer */
+.footerCopy{
+    text-align: center;
+    color: #A6A6A6;
+    margin-top: 3.5rem;
+}
