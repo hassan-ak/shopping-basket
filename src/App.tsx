@@ -8,6 +8,7 @@ import About from './components/About';
 import { Store } from './components/Store';
 import { Gents } from './components/Gents';
 import { Ladies } from './components/Ladies';
+import { Contact } from './components/Contact';
 import { ErrorPage } from './components/ErrorPage';
 import Footer from './components/Footer';
 // Styles Imports
@@ -23,6 +24,7 @@ function App() {
         <Store/>
         <Gents/>
         <Ladies/>
+        <Contact/>
         <ErrorPage/> 
       </div>
       <Footer/>
