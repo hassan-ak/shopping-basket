@@ -3,6 +3,8 @@
 import React, { useRef } from 'react';
 // Images Imports
 import adidas from '../asserts/images/adidas.png';
+// Router imports
+import { Link } from 'react-router-dom';
 
 // App Function
 function About() {
@@ -21,7 +23,7 @@ function About() {
     // Function for moving animation when curser moving into the container
     function animateIn(e: React.MouseEvent) {
         card.current.style.transition = "none";
-        sneaker.current.style.transform = "translateZ(200px) rotateZ(-45deg)";
+        sneaker.current.style.transform = "translateZ(100px) rotateZ(-30deg)";
         title.current.style.transform = "translateZ(150px)";
         sizes.current.style.transform = "translateZ(100px)";
         purchase.current.style.transform = "translateZ(75px)";
@@ -65,7 +67,9 @@ function About() {
                         </div>
                         {/* Div for purchase button */}
                         <div ref={purchase} className="purchaseAbout">
-                            <button>Purchase</button>
+                            <Link to="/store" className="homeLink">
+                                <button>Purchase</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

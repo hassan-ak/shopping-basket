@@ -1,6 +1,8 @@
 // Imports
 // react Imports
-import React from 'react'
+import React from 'react';
+// Router imports
+import { Link } from 'react-router-dom';
 
 // error page
 export const ErrorPage = () => {
@@ -12,7 +14,13 @@ export const ErrorPage = () => {
                 Got deleted.
                 Is hiding out in quarantine.
                 Never existed in the first place.
-                <p>Let's go <strong>Home</strong> and try from there.</p>
+                <p>
+                    Let's go <strong>                
+                        <Link to="/" className="goLink">
+                            Home
+                        </Link>
+                    </strong> and try from there.
+                </p>
             </div>
         </div>
     )

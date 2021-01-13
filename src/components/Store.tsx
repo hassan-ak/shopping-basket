@@ -7,6 +7,8 @@ import { makeStyles } from '@material-ui/core/styles';
 // Images Imports
 import gents from '../asserts/images/gents.png';
 import ladies from '../asserts/images/ladies.png';
+// Router imports
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     gentsButton: {
@@ -34,24 +36,28 @@ export const Store = () => {
                 <Grid item xs={10} md={3} component={Card} className="storeCard">
                     <CardContent className="sCard">
                         <img src={gents} className="storeImage" alt="Gents Shoes" />
-                        <Button
-                            variant="contained"
-                            className={classes.gentsButton}
-                        >
-                            Gents
-                        </Button>
+                        <Link to="gents" className="homeLink">
+                            <Button
+                                variant="contained"
+                                className={classes.gentsButton}
+                            >
+                                Gents
+                            </Button>
+                        </Link>
                     </CardContent>
                 </Grid>
                 {/* Ladies */}
                 <Grid item xs={10} md={3} component={Card} className="storeCard">
                     <CardContent className="sCard">
                         <img src={ladies} className="storeImage" alt="Ladies shoes" />
-                        <Button
-                            variant="contained"
-                            className={classes.ladiesButton}
-                        >
-                            Ladies
-                        </Button>
+                        <Link to="ladies" className="homeLink">
+                            <Button
+                                variant="contained"
+                                className={classes.ladiesButton}
+                            >
+                                Ladies
+                            </Button>
+                        </Link>
                     </CardContent>
                 </Grid>
             </Grid>
