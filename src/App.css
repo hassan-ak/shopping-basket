@@ -257,3 +257,32 @@ body {
     align-self: center;
     border-radius: 100px;
 }
+
+/* ErrorPage */
+.errorPage {
+    color: white;
+    margin: auto;
+    height: 70vh;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.err404 {
+    color: #ffffff;
+    font-size: 8rem;
+}
+.errorMsg {
+    text-align: center;
+    font-size: 1.2rem;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+}
+.errorMsg strong{
+    color: green;
+}  
+.errorMsg p{
+    margin-top: 20px;
+}
