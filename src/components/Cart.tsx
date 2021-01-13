@@ -9,6 +9,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+// Store imports
+import { store } from "../store/store";
+import { remove, removeAll } from "../store/productsSlice";
 
 // Type definations
 interface ProductItem {
@@ -104,7 +107,7 @@ export const Cart = () => {
                     Your cart
                 </Typography>
                 <Typography variant="h5" component="h5" className={classes.cTotal}>
-                    Total: <strong>${totalPrice + totalPrice * 0.10 + totalPrice * 0.15}</strong>
+                    Total: <strong>${(totalPrice + totalPrice * 0.10 + totalPrice * 0.15).toFixed(2)}</strong>
                 </Typography>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={8}>
@@ -128,6 +131,7 @@ export const Cart = () => {
                                                     key={p.id}
                                                     variant="contained"
                                                     className={classes.cartButton}
+                                                    onClick={() => store.dispatch(remove(p))}
                                                 >
                                                     <DeleteForeverIcon />
                                                 </Button>
@@ -153,25 +157,26 @@ export const Cart = () => {
                             </Grid>
                             <Grid item xs={12} className={classes.cRow}>
                                 <Typography variant="button">{numOfItems} items</Typography>
-                                <Typography variant="button">${totalPrice}</Typography>
+                                <Typography variant="button">${totalPrice.toFixed(2)}</Typography>
                             </Grid>
                             <Grid item xs={12} className={classes.cRow}>
                                 <Typography variant="button">Delivery</Typography>
-                                <Typography variant="button">${totalPrice * 0.10}</Typography>
+                                <Typography variant="button">${(totalPrice * 0.10).toFixed(2)}</Typography>
                             </Grid>
                             <Grid item xs={12} className={classes.cRow}>
                                 <Typography variant="button">Sales Tax</Typography>
-                                <Typography variant="button">${totalPrice * 0.15}</Typography>
+                                <Typography variant="button">${(totalPrice * 0.15).toFixed(2)}</Typography>
                             </Grid>
                             <Grid item xs={12} className={classes.cRow}>
                                 <Typography variant="button">Total</Typography>
-                                <Typography variant="button">${totalPrice + totalPrice * 0.10 + totalPrice * 0.15}</Typography>
+                                <Typography variant="button">${(totalPrice + totalPrice * 0.10 + totalPrice * 0.15).toFixed(2)}</Typography>
                             </Grid>
                             <Button
                                 className={classes.cCheckoutBtn}
                                 variant="contained"
                                 color="secondary"
                                 fullWidth
+                                onClick={() => store.dispatch(removeAll())}
                             >
                                 Checkout
                             </Button>
