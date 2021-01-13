@@ -11,6 +11,7 @@ import { Store } from './components/Store';
 import { ProductsCatagory } from './components/ProductsCategory';
 import { Gents } from './components/Gents';
 import { Ladies } from './components/Ladies';
+import { SelectedProduct } from './components/SelectedProduct';
 import { Contact } from './components/Contact';
 import { Cart } from './components/Cart';
 import { ErrorPage } from './components/ErrorPage';
@@ -29,9 +30,11 @@ function App() {
           <Route path="store" element={<Store />} />
           <Route path="store/gents" element={<ProductsCatagory />}>
             <Route path="/" element={<Gents />} />
+            <Route path=":slug" element={<SelectedProduct/>}></Route>
           </Route>
           <Route path="store/ladies" element={<ProductsCatagory />}>
             <Route path="/" element={<Ladies />} />
+            <Route path=":slug" element={<SelectedProduct/>}></Route>
           </Route>
           <Route path="contact" element={<Contact />} />
           <Route path="cart" element={<Cart />} />

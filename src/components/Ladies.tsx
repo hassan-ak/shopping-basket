@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 import { Button, Card, CardContent, Grid } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { makeStyles } from '@material-ui/core/styles';
+// Router imports
+import { Link } from 'react-router-dom';
 
 // Type definations
 interface ProductItem {
@@ -56,12 +58,14 @@ export const Ladies = () => {
                                 </div>
                                 <p className="productsPrice"><strong>${product.price}</strong></p>
                                 <div className="productButtons">
-                                    <Button
-                                        variant="contained"
-                                        className={classes.gentsButton}
-                                    >
-                                        Details
-                                    </Button>
+                                    <Link to={`/store/gents/${product.slug}`} className="homeLink">
+                                        <Button
+                                            variant="contained"
+                                            className={classes.gentsButton}
+                                        >
+                                            Details
+                                        </Button>
+                                    </Link>
                                     <Button
                                         variant="contained"
                                         className={classes.cartButton}
