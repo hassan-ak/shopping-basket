@@ -9,6 +9,9 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { makeStyles } from '@material-ui/core/styles';
 // Router imports
 import { Link } from 'react-router-dom';
+// Redux store Imports
+import { store } from "../store/store";
+import { add } from "../store/productsSlice";
 
 // Type definations
 interface ProductItem {
@@ -69,6 +72,8 @@ export const Ladies = () => {
                                     <Button
                                         variant="contained"
                                         className={classes.cartButton}
+                                        disabled={product.added || !product.is_in_inventory}
+                                        onClick={() => store.dispatch(add(product))}
                                     >
                                         <ShoppingCartIcon />
                                     </Button>

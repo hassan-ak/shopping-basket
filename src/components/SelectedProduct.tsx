@@ -1,10 +1,18 @@
+// Imports
+// React imports
+import React from 'react';
+// Material Ui imports
 import { Card, CardContent, Grid } from '@material-ui/core';
 import { Button, Typography } from '@material-ui/core';
-import React from 'react'
-import { useSelector } from "react-redux"
-import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+// Routers imports
+import { useParams } from 'react-router-dom';
+// Redux imports
+import { useSelector } from "react-redux"
+// Redux store Imports
+import { store } from "../store/store";
+import { add } from "../store/productsSlice";
 
 interface ProductItem {
     id: number
@@ -82,7 +90,13 @@ export const SelectedProduct = () => {
                             </div>
                             <div className="slButtonsDiv pc">
                                 <Button variant="contained" className={classes.startButton}>$ {product?.price}</Button>
-                                <Button variant="contained" className={classes.startButton}><ShoppingCartIcon/></Button>
+                                <Button variant="contained" 
+                                    className={classes.startButton}
+                                    disabled={product?.added || !product?.is_in_inventory}
+                                    onClick={() => store.dispatch(add(product))}
+                                >
+                                    <ShoppingCartIcon/>
+                                </Button>
                             </div>                                
                         </CardContent>
                     </Grid>

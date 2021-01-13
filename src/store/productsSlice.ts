@@ -9,10 +9,18 @@ export const productsSlice = createSlice({
     name: "Products",
     initialState: InitialState,
     reducers: {
-        add: (state, action) => {
-          // add item
-        }
-      }
+      add: (state, action) => {
+        return state.map(item => {
+          if (item.id !== action.payload.id) {
+            return item
+          }
+          return {
+            ...item,
+            added: true
+          }
+        })
+      },
+    }
 });
 
 // Actions Exports
