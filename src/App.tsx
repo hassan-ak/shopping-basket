@@ -4,6 +4,7 @@ import React from 'react';
 // Component Imports
 import Header from './components/Header';
 import { Home } from './components/Home';
+import About from './components/About';
 import Footer from './components/Footer';
 // Styles Imports
 import './App.css';
@@ -14,6 +15,7 @@ function App() {
       <Header/>
       <div className="">
         <Home/>
+        <About/>
       </div>
       <Footer/>
     </div>
