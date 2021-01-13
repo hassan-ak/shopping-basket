@@ -1,0 +1,26 @@
+/* Styles Import */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Genral */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color:#1D2521;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+.containerO{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header */
+.headerImage{
+    width: 50px;
+}
+
