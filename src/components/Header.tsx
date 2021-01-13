@@ -123,7 +123,7 @@ export default function Header() {
                             </Grid>
                             <Grid item xs={2}>
                                 <Link to="cart" className="homeLink">
-                                    <IconButton edge="end" className={classes.cartIcon}>
+                                    <IconButton edge="end" className={classes.cartIcon} aria-label="cart">
                                         <ShoppingCartIcon />
                                     </IconButton>
                                 </Link>

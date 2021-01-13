@@ -74,6 +74,7 @@ export const Gents = () => {
                                         className={classes.cartButton}
                                         disabled={product.added || !product.is_in_inventory}
                                         onClick={() => store.dispatch(add(product))}
+                                        aria-label="Add to Cart"
                                     >
                                         <ShoppingCartIcon />
                                     </Button>

@@ -132,6 +132,7 @@ export const Cart = () => {
                                                     variant="contained"
                                                     className={classes.cartButton}
                                                     onClick={() => store.dispatch(remove(p))}
+                                                    aria-label="delete from Card"
                                                 >
                                                     <DeleteForeverIcon />
                                                 </Button>
