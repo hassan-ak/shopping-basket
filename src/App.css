@@ -24,3 +24,28 @@ body {
     width: 50px;
 }
 
+/* Home Page */
+.homeContainer{
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.homeImage{
+    width: 90%;
+    border-radius: 20px;
+}
+.homeContent{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.homeDetail{
+    text-align: justify;
+    text-justify: inter-word;
+}
+.title{
+    color: #298155;
+}
