@@ -7,11 +7,11 @@ import { Home } from './components/Home';
 import About from './components/About';
 import { Store } from './components/Store';
 import { Gents } from './components/Gents';
+import { Ladies } from './components/Ladies';
 import { ErrorPage } from './components/ErrorPage';
 import Footer from './components/Footer';
 // Styles Imports
 import './App.css';
-
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
         <About/>
         <Store/>
         <Gents/>
+        <Ladies/>
         <ErrorPage/> 
       </div>
       <Footer/>
